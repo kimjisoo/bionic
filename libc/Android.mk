@@ -608,7 +608,7 @@ libc_common_cflags := \
     -D_LIBC=1 \
     -Wall -Wextra -Wunused \
 
-use_clang := $(USE_CLANG_PLATFORM_BUILD)
+use_clang := $(USE_CLANG_BIONIC)
 
 # Clang/llvm has incompatible long double (fp128) for x86_64.
 # https://llvm.org/bugs/show_bug.cgi?id=23897
