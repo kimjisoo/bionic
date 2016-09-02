@@ -3921,6 +3921,7 @@ bool soinfo::link_image(const soinfo_list_t& global_group, const soinfo_list_t& 
     return false;
   }
 
+#if !defined(TARGET_NEEDS_TEXT_RELOCATIONS)
 #if !defined(__LP64__)
   if (has_text_relocations) {
     // Fail if app is targeting sdk version > 22
@@ -3941,7 +3942,7 @@ bool soinfo::link_image(const soinfo_list_t& global_group, const soinfo_list_t& 
     }
   }
 #endif
-
+#endif
   if (android_relocs_ != nullptr) {
     // check signature
     if (android_relocs_size_ > 3 &&
